@@ -24,7 +24,7 @@ Claude Code を使った知識管理・学習システムのサンプルです�
 ## 使い方
 
 ```bash
-git clone https://github.com/<your-name>/Info_sample
+git clone https://github.com/Bassiy/Info_sample
 cd Info_sample
 claude  # Claude Code を起動
 ```
