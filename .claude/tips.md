@@ -1,0 +1,2 @@
+・skill-creatorスキルでレビューする時に見せるログを作成した
+・mapに繋げるための/connectを作成

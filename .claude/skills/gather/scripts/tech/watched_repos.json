@@ -1,0 +1,19 @@
+{
+  "repos": [
+    {
+      "owner": "anthropics",
+      "repo": "claude-code",
+      "display": "Claude Code"
+    },
+    {
+      "owner": "openai",
+      "repo": "codex",
+      "display": "Codex CLI"
+    },
+    {
+      "owner": "google-gemini",
+      "repo": "gemini-cli",
+      "display": "Gemini CLI"
+    }
+  ]
+}

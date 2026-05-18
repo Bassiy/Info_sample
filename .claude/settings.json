@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:50021/:*)",
+      "Bash(open -a VOICEVOX)",
+      "Bash(python3 .claude/skills/gather/scripts/news/gather.py)",
+      "Bash(python3 .claude/skills/gather/scripts/business/gather.py)",
+      "Bash(python3 .claude/skills/gather/scripts/tech/gather.py)",
+      "Bash(python3 .claude/skills/podcast/scripts/tts.py:*)",
+      "Bash(mkdir -p podcasts/:*)",
+      "Bash(python3 .claude/skills/podcast/scripts/player.py:*)",
+      "Bash(afplay .claude/skills/podcast/scripts/finish.mp3)",
+      "Bash(afplay podcasts/:*)"
+    ]
+  },
+  "hooks": {
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/collect_skill_feedback.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/check-knowledge.sh"
+          },
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/check_consistency.py"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/auto-sync.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
