@@ -31,6 +31,10 @@ claude  # Claude Code を起動
 
 起動後、`/guide` でスキル一覧を確認できます。
 
+## 学習の定義
+
+このシステムにおける「学習」の定義・フローは [.claude/docs/learning.md](.claude/docs/learning.md) を参照してください。
+
 ## 主なスキル
 
 | スキル | 説明 |
